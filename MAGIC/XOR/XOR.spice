@@ -1,0 +1,37 @@
+* SPICE3 file created from XOR.ext - technology: scmos
+
+.option scale=90n
+
+M1000 out in2 in1 w_n191_n85# pfet w=20 l=2
++  ad=70p pd=27u as=100p ps=50u
+M1001 in2 in1 out w_n191_n85# pfet w=20 l=2
++  ad=100p pd=50u as=70p ps=27u
+M1002 out in2 in1_inv Gnd nfet w=10 l=2
++  ad=35p pd=17u as=50p ps=30u
+M1003 gnd in1 in1_inv Gnd nfet w=10 l=2
++  ad=50p pd=30u as=50p ps=30u
+M1004 in2 in1_inv out Gnd nfet w=10 l=2
++  ad=50p pd=30u as=35p ps=17u
+M1005 vdd in1 in1_inv w_n191_n85# pfet w=20 l=2
++  ad=100p pd=50u as=100p ps=50u
+C0 out w_n191_n85# 0.01368f
+C1 vdd w_n191_n85# 0.00819f
+C2 in2 in1 0.07239f
+C3 out in1_inv 0
+C4 gnd in1 0.01932f
+C5 in2 w_n191_n85# 0.0248f
+C6 w_n191_n85# in1 0.08752f
+C7 in1_inv in2 0.02788f
+C8 out in2 0.24886f
+C9 in1_inv in1 0.05926f
+C10 out in1 0.00216f
+C11 vdd in1 0.0569f
+C12 in1_inv gnd 0.12132f
+C13 in1_inv w_n191_n85# 0.00598f
+C14 gnd 0 0.06814f **FLOATING
+C15 out 0 0.25364f **FLOATING
+C16 vdd 0 0.08731f **FLOATING
+C17 in1_inv 0 0.86124f **FLOATING
+C18 in2 0 0.45632f **FLOATING
+C19 in1 0 0.41815f **FLOATING
+C20 w_n191_n85# 0 1.96059f **FLOATING

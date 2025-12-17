@@ -1,0 +1,56 @@
+* SPICE3 file created from 4_nand.ext - technology: scmos
+
+.option scale=90n
+
+M1000 ground input_4 a_1_n57# Gnd nfet w=40 l=2
++  ad=0.2n pd=90u as=0.12n ps=46u
+M1001 power input_2 output w_n28_n11# pfet w=20 l=2
++  ad=60p pd=26u as=60p ps=26u
+M1002 power input_4 output w_n28_n11# pfet w=20 l=2
++  ad=100p pd=50u as=60p ps=26u
+M1003 output input_3 power w_n28_n11# pfet w=20 l=2
++  ad=60p pd=26u as=60p ps=26u
+M1004 output input_1 power w_n28_n11# pfet w=20 l=2
++  ad=60p pd=26u as=100p ps=50u
+M1005 a_n7_n57# input_2 a_n15_n57# Gnd nfet w=40 l=2
++  ad=0.12n pd=46u as=0.12n ps=46u
+M1006 a_1_n57# input_3 a_n7_n57# Gnd nfet w=40 l=2
++  ad=0.12n pd=46u as=0.12n ps=46u
+M1007 a_n15_n57# input_1 output Gnd nfet w=40 l=2
++  ad=0.12n pd=46u as=0.2n ps=90u
+C0 power input_1 0.00145f
+C1 input_1 w_n28_n11# 0.01842f
+C2 input_2 power 0.00145f
+C3 output input_3 0.00849f
+C4 input_2 w_n28_n11# 0.01803f
+C5 power output 0.94582f
+C6 input_2 input_1 0.17037f
+C7 output w_n28_n11# 0.02246f
+C8 input_4 input_3 0.17037f
+C9 a_n15_n57# output 0.46742f
+C10 a_n15_n57# a_n7_n57# 0.41238f
+C11 output input_1 0.0097f
+C12 power input_4 0.00145f
+C13 input_2 output 0.00865f
+C14 input_4 w_n28_n11# 0.01842f
+C15 ground a_1_n57# 0.41238f
+C16 power input_3 0.00145f
+C17 a_n7_n57# output 0.05504f
+C18 w_n28_n11# input_3 0.01803f
+C19 input_4 ground 0
+C20 output a_1_n57# 0.05501f
+C21 a_n7_n57# a_1_n57# 0.41238f
+C22 power w_n28_n11# 0.02419f
+C23 input_4 output 0.00234f
+C24 input_2 input_3 0.17037f
+C25 ground 0 0.06411f **FLOATING
+C26 a_1_n57# 0 0.00535f **FLOATING
+C27 a_n7_n57# 0 0.00535f **FLOATING
+C28 a_n15_n57# 0 0.00535f **FLOATING
+C29 output 0 0.15501f **FLOATING
+C30 power 0 0.19544f **FLOATING
+C31 input_4 0 0.13691f **FLOATING
+C32 input_3 0 0.08746f **FLOATING
+C33 input_2 0 0.08746f **FLOATING
+C34 input_1 0 0.14017f **FLOATING
+C35 w_n28_n11# 0 1.54276f **FLOATING

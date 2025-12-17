@@ -1,0 +1,50 @@
+timestamp 1763551670
+version 8.3
+tech scmos
+style TSMC0.18um(tsmc18)from:t11b
+scale 1000 1 9
+resistclasses 6700 7500 929000 929000 1 7700 7700 80 80 80 70 70 40
+node "ground" 55 64.1149 9 -57 ndif 200 90 0 0 0 0 0 0 0 0 0 0 0 0 177 98 0 0 0 0 0 0 0 0 0 0
+node "a_1_n57#" 45 5.34571 1 -57 ndif 240 92 0 0 0 0 0 0 0 0 0 0 0 0 160 88 0 0 0 0 0 0 0 0 0 0
+node "a_n7_n57#" 45 5.34571 -7 -57 ndif 240 92 0 0 0 0 0 0 0 0 0 0 0 0 160 88 0 0 0 0 0 0 0 0 0 0
+node "a_n15_n57#" 45 5.34571 -15 -57 ndif 240 92 0 0 0 0 0 0 0 0 0 0 0 0 160 88 0 0 0 0 0 0 0 0 0 0
+node "output" 125 155.011 -22 -57 ndc 200 90 240 104 0 0 0 0 0 0 0 0 0 0 520 268 0 0 0 0 0 0 0 0 0 0
+node "power" 122 195.444 -22 -5 pdc 0 0 320 152 0 0 0 0 0 0 0 0 0 0 468 242 0 0 0 0 0 0 0 0 0 0
+node "input_4" 323 136.907 6 -66 pc 0 0 0 0 0 0 0 0 0 0 176 176 0 0 28 22 0 0 0 0 0 0 0 0 0 0
+node "input_3" 323 87.4639 -2 -66 pc 0 0 0 0 0 0 0 0 0 0 176 176 0 0 28 22 0 0 0 0 0 0 0 0 0 0
+node "input_2" 323 87.4639 -10 -66 pc 0 0 0 0 0 0 0 0 0 0 176 176 0 0 28 22 0 0 0 0 0 0 0 0 0 0
+node "input_1" 323 140.175 -18 -66 pc 0 0 0 0 0 0 0 0 0 0 176 176 0 0 32 24 0 0 0 0 0 0 0 0 0 0
+node "w_n28_n11#" 1394 1542.76 -28 -11 nw 0 0 0 0 1536 160 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "input_2" "input_1" 170.368
+cap "output" "input_4" 2.34189
+cap "power" "input_3" 1.45212
+cap "input_2" "input_3" 170.368
+cap "output" "power" 945.821
+cap "output" "input_2" 8.65162
+cap "ground" "input_4" 0.725989
+cap "a_n15_n57#" "output" 467.421
+cap "w_n28_n11#" "input_1" 18.4161
+cap "w_n28_n11#" "input_3" 18.028
+cap "a_n15_n57#" "a_n7_n57#" 412.38
+cap "power" "input_4" 1.45212
+cap "w_n28_n11#" "output" 22.4637
+cap "input_2" "power" 1.45212
+cap "output" "input_1" 9.70015
+cap "w_n28_n11#" "input_4" 18.4161
+cap "output" "input_3" 8.49048
+cap "a_1_n57#" "output" 55.0123
+cap "w_n28_n11#" "power" 24.1947
+cap "w_n28_n11#" "input_2" 18.028
+cap "a_1_n57#" "a_n7_n57#" 412.38
+cap "input_3" "input_4" 170.368
+cap "a_1_n57#" "ground" 412.38
+cap "output" "a_n7_n57#" 55.0407
+cap "power" "input_1" 1.45212
+fet nfet 7 -57 8 -56 80 84 "Gnd!" "input_4" 4 0 "a_1_n57#" 40 120,46 "ground" 40 200,90
+fet nfet -1 -57 0 -56 80 84 "Gnd!" "input_3" 4 0 "a_n7_n57#" 40 120,46 "a_1_n57#" 40 120,46
+fet nfet -9 -57 -8 -56 80 84 "Gnd!" "input_2" 4 0 "a_n15_n57#" 40 120,46 "a_n7_n57#" 40 120,46
+fet nfet -17 -57 -16 -56 80 84 "Gnd!" "input_1" 4 0 "output" 40 200,90 "a_n15_n57#" 40 120,46
+fet pfet 7 -5 8 -4 40 44 "w_n28_n11#" "input_4" 4 0 "output" 20 60,26 "power" 20 100,50
+fet pfet -1 -5 0 -4 40 44 "w_n28_n11#" "input_3" 4 0 "power" 20 60,26 "output" 20 60,26
+fet pfet -9 -5 -8 -4 40 44 "w_n28_n11#" "input_2" 4 0 "output" 20 60,26 "power" 20 60,26
+fet pfet -17 -5 -16 -4 40 44 "w_n28_n11#" "input_1" 4 0 "power" 20 100,50 "output" 20 60,26

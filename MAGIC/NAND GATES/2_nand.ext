@@ -1,0 +1,24 @@
+timestamp 1763466878
+version 8.3
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+node "ground" 107 1692 15 -33 ndiff 100 50 0 0 0 0 0 0 0 0 0 0 116 66 0 0 0 0
+node "a_7_n33#" 89 0 7 -33 ndiff 120 52 0 0 0 0 0 0 0 0 0 0 80 48 0 0 0 0
+node "output" 306 3384 0 -33 ndc 100 50 120 52 0 0 0 0 0 0 0 0 264 140 0 0 0 0
+node "power_supply" 620 3525 0 1 pdc 0 0 200 100 0 0 0 0 0 0 0 0 304 160 0 0 0 0
+node "input_2" 906 9976 12 34 pc 0 0 0 0 160 160 0 0 0 0 0 0 32 24 0 0 0 0
+node "input_1" 906 9976 4 34 pc 0 0 0 0 160 160 0 0 0 0 0 0 32 24 0 0 0 0
+node "w_n6_n5#" 3024 0 -6 -5 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1015 128
+cap "input_1" "power_supply" 240
+cap "w_n6_n5#" "input_2" 936
+cap "power_supply" "input_2" 240
+cap "w_n6_n5#" "output" 1128
+cap "input_1" "output" 240
+cap "input_1" "w_n6_n5#" 936
+cap "w_n6_n5#" "power_supply" 2491
+device mosfet nfet 13 -33 14 -32 2 20 "Gnd!" "input_2" 4 0 "a_7_n33#" 20 60,26 "ground" 20 100,50
+device mosfet nfet 5 -33 6 -32 2 20 "Gnd!" "input_1" 4 0 "output" 20 100,50 "a_7_n33#" 20 60,26
+device mosfet pfet 13 1 14 2 2 20 "w_n6_n5#" "input_2" 4 0 "output" 20 60,26 "power_supply" 20 100,50
+device mosfet pfet 5 1 6 2 2 20 "w_n6_n5#" "input_1" 4 0 "power_supply" 20 100,50 "output" 20 60,26

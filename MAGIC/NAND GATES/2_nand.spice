@@ -1,0 +1,17 @@
+* SPICE3 file created from 2_nand.ext - technology: scmos
+
+.option scale=1u
+
+M1000 a_7_n33# input_1 output Gnd nfet w=20 l=2
++  ad=60p pd=26u as=100p ps=50u
+M1001 ground input_2 a_7_n33# Gnd nfet w=20 l=2
++  ad=100p pd=50u as=60p ps=26u
+M1002 power_supply input_2 output w_n6_n5# pfet w=20 l=2
++  ad=100p pd=50u as=60p ps=26u
+M1003 output input_1 power_supply w_n6_n5# pfet w=20 l=2
++  ad=60p pd=26u as=100p ps=50u
+C0 w_n6_n5# power_supply 2.491f
+C1 output 0 3.384f **FLOATING
+C2 power_supply 0 3.525f **FLOATING
+C3 input_2 0 9.976f **FLOATING
+C4 input_1 0 9.976f **FLOATING

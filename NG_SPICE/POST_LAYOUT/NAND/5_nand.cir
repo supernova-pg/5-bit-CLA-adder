@@ -1,0 +1,90 @@
+.include TSMC_180nm.txt
+
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.global gnd vdd
+
+VDD vdd gnd SUPPLY
+vinA A gnd PULSE(0 SUPPLY   20ns 1ps 1ps   20ns  40ns)
+vinB B gnd PULSE(0 SUPPLY   10ns 1ps 1ps   10ns  20ns)
+vinC C gnd PULSE(0 SUPPLY    5ns 1ps 1ps    5ns  10ns)
+vinD D gnd PULSE(0 SUPPLY  2.5ns 1ps 1ps  2.5ns   5ns)
+vinE E gnd PULSE(0 SUPPLY 1.25ns 1ps 1ps 1.25ns 2.5ns)
+
+.option scale=90n
+
+M1000 a_8_n73# C a_0_n73# gnd CMOSN w=50 l=2
++  ad=0.15n pd=56u as=0.15n ps=56u
+M1001 a_n8_n73# A output gnd CMOSN w=50 l=2
++  ad=0.15n pd=56u as=0.25n ps=0.11m
+M1002 a_16_n73# D a_8_n73# gnd CMOSN w=50 l=2
++  ad=0.15n pd=56u as=0.15n ps=56u
+M1003 ground E a_16_n73# gnd CMOSN w=50 l=2
++  ad=0.25n pd=0.11m as=0.15n ps=56u
+M1004 vdd D output w_n21_n15# CMOSP w=20 l=2
++  ad=60p pd=26u as=60p ps=26u
+M1005 a_0_n73# B a_n8_n73# gnd CMOSN w=50 l=2
++  ad=0.15n pd=56u as=0.15n ps=56u
+M1006 output A vdd w_n21_n15# CMOSP w=20 l=2
++  ad=60p pd=26u as=100p ps=50u
+M1007 output C vdd w_n21_n15# CMOSP w=20 l=2
++  ad=60p pd=26u as=60p ps=26u
+M1008 output E vdd w_n21_n15# CMOSP w=20 l=2
++  ad=100p pd=50u as=60p ps=26u
+M1009 vdd B output w_n21_n15# CMOSP w=20 l=2
++  ad=60p pd=26u as=60p ps=26u
+C0 D E 0.22705f
+C1 D vdd 0
+C2 a_16_n73# ground 0.51547f
+C3 D output 0.00223f
+C4 E vdd 0
+C5 E output 0.00223f
+C6 vdd output 1.0564f
+C7 D C 0.20987f
+C8 vdd A 0
+C9 D w_n21_n15# 0.01803f
+C10 vdd B 0
+C11 output A 0.00373f
+C12 E w_n21_n15# 0.01842f
+C13 output a_n8_n73# 0.51586f
+C14 vdd C 0
+C15 output B 0.00225f
+C16 A B 0.22705f
+C17 vdd w_n21_n15# 0.03942f
+C18 a_n8_n73# a_0_n73# 0.51547f
+C19 E ground 0.00759f
+C20 output C 0.00223f
+C21 a_0_n73# a_8_n73# 0.51547f
+C22 output w_n21_n15# 0.03701f
+C23 w_n21_n15# A 0.01842f
+C24 B C 0.22705f
+C25 w_n21_n15# B 0.01803f
+C26 a_8_n73# a_16_n73# 0.51547f
+C27 w_n21_n15# C 0.01803f
+C28 ground 0 0.09058f 
+C29 a_16_n73# 0 0.00963f 
+C30 a_8_n73# 0 0.00963f 
+C31 a_0_n73# 0 0.00963f 
+C32 a_n8_n73# 0 0.00963f 
+C33 output 0 0.8245f 
+C34 vdd 0 0.65133f 
+C35 E 0 0.16336f 
+C36 D 0 0.10318f 
+C37 C 0 0.10318f 
+C38 B 0 0.10316f 
+C39 A 0 0.16434f 
+C40 w_n21_n15# 0 1.79988f 
+
+
+
+.tran 1n 80n 
+
+
+.control
+
+    run
+    set curplottitle="2024102023_5_nand"
+    plot v(A) v(B)+3 v(C)+6 v(D)+9 v(E)+12 v(output)+15
+    
+.endc
+.end

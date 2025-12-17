@@ -1,0 +1,65 @@
+* SPICE3 file created from 5_nand.ext - technology: scmos
+
+.option scale=90n
+
+M1000 a_8_n73# input_3 a_0_n73# Gnd nfet w=50 l=2
++  ad=0.15n pd=56u as=0.15n ps=56u
+M1001 a_n8_n73# input_1 output Gnd nfet w=50 l=2
++  ad=0.15n pd=56u as=0.25n ps=0.11m
+M1002 a_16_n73# input_4 a_8_n73# Gnd nfet w=50 l=2
++  ad=0.15n pd=56u as=0.15n ps=56u
+M1003 ground input_5 a_16_n73# Gnd nfet w=50 l=2
++  ad=0.25n pd=0.11m as=0.15n ps=56u
+M1004 power input_4 output w_n21_n15# pfet w=20 l=2
++  ad=60p pd=26u as=60p ps=26u
+M1005 a_0_n73# input_2 a_n8_n73# Gnd nfet w=50 l=2
++  ad=0.15n pd=56u as=0.15n ps=56u
+M1006 output input_1 power w_n21_n15# pfet w=20 l=2
++  ad=60p pd=26u as=100p ps=50u
+M1007 output input_3 power w_n21_n15# pfet w=20 l=2
++  ad=60p pd=26u as=60p ps=26u
+M1008 output input_5 power w_n21_n15# pfet w=20 l=2
++  ad=100p pd=50u as=60p ps=26u
+M1009 power input_2 output w_n21_n15# pfet w=20 l=2
++  ad=60p pd=26u as=60p ps=26u
+C0 input_4 input_5 0.22705f
+C1 input_4 power 0
+C2 a_16_n73# ground 0.51547f
+C3 input_4 output 0.00223f
+C4 input_5 power 0
+C5 input_5 output 0.00223f
+C6 power output 1.0564f
+C7 input_4 input_3 0.20987f
+C8 power input_1 0
+C9 input_4 w_n21_n15# 0.01803f
+C10 power input_2 0
+C11 output input_1 0.00373f
+C12 input_5 w_n21_n15# 0.01842f
+C13 output a_n8_n73# 0.51586f
+C14 power input_3 0
+C15 output input_2 0.00225f
+C16 input_1 input_2 0.22705f
+C17 power w_n21_n15# 0.03942f
+C18 a_n8_n73# a_0_n73# 0.51547f
+C19 input_5 ground 0.00759f
+C20 output input_3 0.00223f
+C21 a_0_n73# a_8_n73# 0.51547f
+C22 output w_n21_n15# 0.03701f
+C23 w_n21_n15# input_1 0.01842f
+C24 input_2 input_3 0.22705f
+C25 w_n21_n15# input_2 0.01803f
+C26 a_8_n73# a_16_n73# 0.51547f
+C27 w_n21_n15# input_3 0.01803f
+C28 ground 0 0.09058f **FLOATING
+C29 a_16_n73# 0 0.00963f **FLOATING
+C30 a_8_n73# 0 0.00963f **FLOATING
+C31 a_0_n73# 0 0.00963f **FLOATING
+C32 a_n8_n73# 0 0.00963f **FLOATING
+C33 output 0 0.8245f **FLOATING
+C34 power 0 0.65133f **FLOATING
+C35 input_5 0 0.16336f **FLOATING
+C36 input_4 0 0.10318f **FLOATING
+C37 input_3 0 0.10318f **FLOATING
+C38 input_2 0 0.10316f **FLOATING
+C39 input_1 0 0.16434f **FLOATING
+C40 w_n21_n15# 0 1.79988f **FLOATING

@@ -1,0 +1,63 @@
+.include TSMC_180nm.txt
+.option scale=90n
+
+.param SUPPLY=1.8
+.global gnd vdd
+
+VDD vdd gnd SUPPLY
+vinA input1 gnd PULSE(0 SUPPLY  10ns 1ps 1ps  10ns 20ns)
+vinB input2 gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns 10ns)
+vinC input3 gnd PULSE(0 SUPPLY 2.5ns 1ps 1ps 2.5ns  5ns)
+
+.option scale=90n
+
+M1000 vdd input2 output w_n12_n13# CMOSP w=20 l=2
++  ad=60p pd=26u as=60p ps=26u
+M1001 a_9_n54# input2 a_1_n54# Gnd CMOSN w=30 l=2
++  ad=90p pd=36u as=90p ps=36u
+M1002 output input1 vdd w_n12_n13# CMOSP w=20 l=2
++  ad=60p pd=26u as=100p ps=50u
+M1003 gnd input3 a_9_n54# Gnd CMOSN w=30 l=2
++  ad=0.15n pd=70u as=90p ps=36u
+M1004 output input3 vdd w_n12_n13# CMOSP w=20 l=2
++  ad=100p pd=50u as=60p ps=26u
+M1005 a_1_n54# input1 output Gnd CMOSN w=30 l=2
++  ad=90p pd=36u as=0.15n ps=70u
+C0 w_n12_n13# input1 0.01842f
+C1 w_n12_n13# output 0.01862f
+C2 w_n12_n13# input2 0.01803f
+C3 vdd input3 0.00153f
+C4 vdd input1 0.00153f
+C5 output vdd 0.72863f
+C6 input2 vdd 0.00153f
+C7 gnd a_9_n54# 0.30929f
+C8 output input3 0.00849f
+C9 output input1 0.0108f
+C10 input2 input3 0.17551f
+C11 a_9_n54# a_1_n54# 0.30929f
+C12 input2 input1 0.17551f
+C13 output a_1_n54# 0.33679f
+C14 output input2 0.00914f
+C15 w_n12_n13# vdd 0.02173f
+C16 w_n12_n13# input3 0.01842f
+C17 gnd 0 0.05163f 
+C18 a_9_n54# 0 0.00898f 
+C19 a_1_n54# 0 0.00507f 
+C20 output 0 0.29759f 
+C21 vdd 0 0.11091f 
+C22 input3 0 0.14755f 
+C23 input2 0 0.09227f 
+C24 input1 0 0.14755f 
+C25 w_n12_n13# 0 1.28563f 
+
+.tran 0.1ns 50ns
+
+* Control block to run and plot
+.control
+  run
+  set curplottitle="2024102023_3_NAND"
+  * Plot output, and inputs shifted for visibility
+  plot  v(input1) v(input2)+3 v(input3)+6 v(output)+9
+.endc
+
+.end

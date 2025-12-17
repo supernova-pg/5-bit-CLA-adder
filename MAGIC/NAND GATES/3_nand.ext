@@ -1,0 +1,38 @@
+timestamp 1764659791
+version 8.3
+tech scmos
+style TSMC0.18um(tsmc18)from:t11b
+scale 1000 1 9
+resistclasses 6700 7500 929000 929000 1 7700 7700 80 80 80 70 70 40
+node "ground" 41 51.6299 17 -54 ndif 150 70 0 0 0 0 0 0 0 0 0 0 0 0 136 76 0 0 0 0 0 0 0 0 0 0
+node "a_9_n54#" 34 8.98301 9 -54 ndif 180 72 0 0 0 0 0 0 0 0 0 0 0 0 120 68 0 0 0 0 0 0 0 0 0 0
+node "a_1_n54#" 34 5.07169 1 -54 ndif 180 72 0 0 0 0 0 0 0 0 0 0 0 0 120 68 0 0 0 0 0 0 0 0 0 0
+node "output" 116 297.587 -6 -54 ndc 150 70 220 102 0 0 0 0 0 0 0 0 0 0 473 244 37 28 0 0 0 0 0 0 0 0
+node "power" 74 110.909 -6 -7 pdc 0 0 220 102 0 0 0 0 0 0 0 0 0 0 304 160 0 0 0 0 0 0 0 0 0 0
+node "input3" 296 147.554 14 -61 pc 0 0 0 0 0 0 0 0 0 0 162 162 0 0 25 22 0 0 0 0 0 0 0 0 0 0
+node "input2" 296 92.2743 6 -61 pc 0 0 0 0 0 0 0 0 0 0 162 162 0 0 25 22 0 0 0 0 0 0 0 0 0 0
+node "input1" 296 147.554 -2 -61 pc 0 0 0 0 0 0 0 0 0 0 162 162 0 0 25 22 0 0 0 0 0 0 0 0 0 0
+node "w_n12_n13#" 1161 1285.63 -12 -13 nw 0 0 0 0 1280 144 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "w_n12_n13#" "power" 21.7274
+cap "input3" "power" 1.53323
+cap "input1" "output" 10.7975
+cap "input1" "w_n12_n13#" 18.4161
+cap "power" "input2" 1.53323
+cap "w_n12_n13#" "output" 18.6154
+cap "a_1_n54#" "a_9_n54#" 309.285
+cap "input3" "output" 8.49048
+cap "w_n12_n13#" "input3" 18.4161
+cap "input1" "input2" 175.514
+cap "input1" "power" 1.53323
+cap "input2" "output" 9.13623
+cap "power" "output" 728.629
+cap "ground" "a_9_n54#" 309.285
+cap "a_1_n54#" "output" 336.788
+cap "w_n12_n13#" "input2" 18.028
+cap "input3" "input2" 175.514
+fet nfet 15 -54 16 -53 60 64 "Gnd!" "input3" 4 0 "a_9_n54#" 30 90,36 "ground" 30 150,70
+fet nfet 7 -54 8 -53 60 64 "Gnd!" "input2" 4 0 "a_1_n54#" 30 90,36 "a_9_n54#" 30 90,36
+fet nfet -1 -54 0 -53 60 64 "Gnd!" "input1" 4 0 "output" 30 150,70 "a_1_n54#" 30 90,36
+fet pfet 15 -7 16 -6 40 44 "w_n12_n13#" "input3" 4 0 "power" 20 60,26 "output" 20 100,50
+fet pfet 7 -7 8 -6 40 44 "w_n12_n13#" "input2" 4 0 "output" 20 60,26 "power" 20 60,26
+fet pfet -1 -7 0 -6 40 44 "w_n12_n13#" "input1" 4 0 "power" 20 100,50 "output" 20 60,26

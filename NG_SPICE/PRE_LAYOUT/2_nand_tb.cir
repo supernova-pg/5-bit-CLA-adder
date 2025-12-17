@@ -1,0 +1,45 @@
+.include TSMC_180nm.txt
+.option scale=90n
+
+
+V_VDD vdd gnd dc 1.8v
+
+
+V_in_A  in_A  gnd  pulse 0v 1.8v 1ns 1ns 1ns 10ns 20ns
+* Input B: Pulse (0V to 1.8V, 20ns period, 5ns delay)
+V_in_B  in_B  gnd  pulse 0v 1.8v 5ns 1ns 1ns 10ns 20ns
+
+
+* NMOS stack
+M1000 a_7_n33# in_A output 0 CMOSN w=20 l=2
++  ad=60p pd=26u as=100p ps=50u
+
+M1001 0 in_B a_7_n33# 0 CMOSN w=20 l=2
++  ad=100p pd=50u as=60p ps=26u
+
+* PMOS pull-up
+M1002 vdd in_B output w_n6_n5# CMOSP w=20 l=2
++  ad=100p pd=50u as=60p ps=26u
+
+M1003 output in_A vdd w_n6_n5# CMOSP w=20 l=2
++  ad=60p pd=26u as=100p ps=50u
+
+* Caps
+C0 w_n6_n5# vdd 2.491f
+C1 output 0 3.384f 
+C2 vdd 0 3.525f 
+C3 in_B 0 9.976f 
+C4 in_A 0 9.976f 
+
+
+.tran 0.1ns 50ns
+
+* Control block to run and plot
+.control
+  run
+  
+  set curplottitle="2024102023_2_NAND"
+  plot  v(in_A) v(in_B)+3 v(output)+6
+.endc
+
+.end
